@@ -1,5 +1,7 @@
 
+
 import java.awt.HeadlessException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -250,7 +252,40 @@ public class Busqueda extends javax.swing.JPanel {
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-       ControllerEstudiante.evnModificacion(txtDni.getText());
+       
+       
+         String dni = txtDni.getText();
+         String nombre = txtNomyApe.getText();       
+         String domicilio = txtDom.getText();
+         String fechaNac = txtFechaNac.getText();
+         String lugarNac = txtLugNac.getText();
+         String provincia = txtProvincia.getText();
+         String departamento = txtDpto.getText();
+         String telefono = txtTelefono.getText();
+         String carrera = txtCarrera.getText();
+         String año = txtAño.getText() ;
+         String sexoselect = txtSexo.getText();
+
+         System.out.println("el nombre es: "+nombre);
+         
+        Estudiante estudianteView = new Estudiante();              
+        
+        estudianteView.setNombre(nombre);
+        estudianteView.setDni(dni);
+        estudianteView.setDomicilio(domicilio);
+        estudianteView.setFechaNac(fechaNac);
+        estudianteView.setLugarNac(lugarNac);
+        estudianteView.setProvincia(provincia);
+        estudianteView.setDepartamento(departamento);
+        estudianteView.setTelefono(telefono);
+        estudianteView.setCarrera(carrera);
+        estudianteView.setAñoIngreso(año);
+        estudianteView.setSexo(sexoselect);
+       
+       ControllerEstudiante.evnModificacion(estudianteView);
+       
+       
+       
     }//GEN-LAST:event_btnModificarActionPerformed
 
     public JTextField getTxtAño() {
@@ -341,7 +376,7 @@ public class Busqueda extends javax.swing.JPanel {
         this.txtTelefono = txtTelefono;
     }
     
-    
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConsultar;
